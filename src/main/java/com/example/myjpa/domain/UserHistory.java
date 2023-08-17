@@ -14,6 +14,7 @@ public class UserHistory extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "user_id")
     private Long userId;
 
     @NonNull

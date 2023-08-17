@@ -45,6 +45,7 @@ public class Users extends BaseEntity{
     private Gender gender;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
     private List<UserHistory> userHistories = new ArrayList<UserHistory>();
 
 

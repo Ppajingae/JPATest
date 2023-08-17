@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    show-sql: true
+    defer-datasource-initialization: true #call next value for hibernate_sequence; 해당 소스 안에 들어있음
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:2d906f3d-9190-453b-a306-4210c5923331
+    username: sa
+    password:
+  sql:
+    init:
+      data-locations: classpath:data.sql
+

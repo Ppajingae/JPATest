@@ -19,8 +19,6 @@ class AlbumRepositoryTest {
         album.setName("GLASSY");
         album.setArtistId(1L);
         album.setCategory("발라드");
-        album.setIdolGroupId(1L);
-
 
         albumRepository.save(album);
 

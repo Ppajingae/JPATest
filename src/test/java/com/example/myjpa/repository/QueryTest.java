@@ -1,6 +1,6 @@
 package com.example.myjpa.repository;
 
-import com.example.myjpa.domain.Gender;
+import com.example.myjpa.enumtest.Gender;
 import com.example.myjpa.domain.Users;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

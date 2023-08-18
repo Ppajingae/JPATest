@@ -1,8 +1,7 @@
 package com.example.myjpa.repository;
 
-import com.example.myjpa.domain.Gender;
-import com.example.myjpa.domain.Users;
-import com.example.myjpa.domain.UserHistory;
+import com.example.myjpa.domain.*;
+import com.example.myjpa.enumtest.Gender;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,6 +23,15 @@ class UsersRepositoryTest {
 
     @Autowired
     private UserHistoryRepository userHistoryRepository;
+
+    @Autowired
+    private IdolGroupRepository idolGroupRepository;
+
+    @Autowired
+    private ReviewRepository reviewRepository;
+
+    @Autowired
+    private AlbumRepository albumRepository;
 
     @Transactional
     @Test
@@ -128,6 +136,55 @@ class UsersRepositoryTest {
         List<UserHistory> result = usersRepository.findByEmail("yrjo@gmail.com").getUserHistories();
 
         result.forEach(System.out::println);
+
+        System.out.println("test" + userHistoryRepository.findAll().get(0).getUsers());
+    }
+
+    @Test
+    @Transactional
+    public void albumRelationTest(){
+
+        givenAlbumAndReview();
+
+        Users users = usersRepository.findByEmail("yrjo011022@gmail.com");
+
+        System.out.println("review -> " + users.getReviews());
+    }
+
+    private void givenAlbumAndReview() {
+
+        givenReview(givenUser(),givenAlbum(givenIdolGroup()));
+    }
+
+    private Users givenUser(){
+        return usersRepository.findByEmail("yrjo011022@gmail.com");
+    }
+
+    private Album givenAlbum(IdolGroup idolGroup){
+        Album album = new Album();
+        album.setName("GLASSY");
+        album.setIdolGroup(idolGroup);
+
+        return albumRepository.save(album);
+
+    }
+
+    private IdolGroup givenIdolGroup(){
+        IdolGroup idolGroup = new IdolGroup();
+        idolGroup.setName("IzOne");
+        idolGroup.setMemberName("권은비, 사쿠라, 조유리, 최예나, 안유진, 히토미, 나코, 이채연, 장원영, 김민주, 강혜원, 김채원");
+
+        return idolGroupRepository.save(idolGroup);
+    }
+    private void givenReview(Users user, Album album){
+        Review review = new Review();
+        review.setTitle("GLASSY");
+        review.setContent("노래 좋음");
+        review.setScore(4.9D);
+        review.setUsers(user);
+        review.setAlbum(album);
+
+        reviewRepository.save(review);
     }
 
 }

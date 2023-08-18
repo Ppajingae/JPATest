@@ -49,7 +49,6 @@ class ReviewInfoRepositoryTest {
 
         Album album = new Album();
 
-        album.setIdolGroupId(1L);
         album.setName("GLASSY");
         album.setArtistId(1L);
         album.setCategory("댄스");

@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-08-09T18:35:24.745Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="4Y4FNwxfBBAn--2LpAaJ" version="21.6.5" type="device">
+<mxfile host="Electron" modified="2023-08-09T20:41:58.377Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="K6U2esOJ_iuot3x7InuN" version="21.6.5" type="device">
   <diagram name="페이지-1" id="BjhchzwS4EUZMZ263wXX">
     <mxGraphModel dx="2450" dy="503" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -618,12 +618,12 @@
         <mxCell id="IbSsZZDcKFAwa9mlkV8q-21" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="IbSsZZDcKFAwa9mlkV8q-11">
           <mxGeometry y="120" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="IbSsZZDcKFAwa9mlkV8q-22" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="IbSsZZDcKFAwa9mlkV8q-21">
+        <mxCell id="IbSsZZDcKFAwa9mlkV8q-22" value="FK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="IbSsZZDcKFAwa9mlkV8q-21">
           <mxGeometry width="30" height="30" as="geometry">
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="IbSsZZDcKFAwa9mlkV8q-23" value="book_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="IbSsZZDcKFAwa9mlkV8q-21">
+        <mxCell id="IbSsZZDcKFAwa9mlkV8q-23" value="Album_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="IbSsZZDcKFAwa9mlkV8q-21">
           <mxGeometry x="30" width="150" height="30" as="geometry">
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>

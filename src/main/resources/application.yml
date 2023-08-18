@@ -18,4 +18,5 @@ spring:
   sql:
     init:
       data-locations: classpath:data.sql
-
+server:
+  port: 9090

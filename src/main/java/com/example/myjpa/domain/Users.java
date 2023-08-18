@@ -2,6 +2,7 @@ package com.example.myjpa.domain;
 
 
 import com.example.myjpa.entityListener.UserEntityListener;
+import com.example.myjpa.enumtest.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -45,8 +46,13 @@ public class Users extends BaseEntity{
     private Gender gender;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @ToString.Exclude
+    private List<UserHistory> userHistories = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
-    private List<UserHistory> userHistories = new ArrayList<UserHistory>();
+    private List<Review> reviews = new ArrayList<>();
 
 
 //    @Transient //해당 필드에서만 사용하고 DB 테이블에는 적용이 되지 않게 하는 Annotation

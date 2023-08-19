@@ -2,6 +2,7 @@ package com.example.myjpa.repository;
 
 import com.example.myjpa.domain.*;
 import com.example.myjpa.enumtest.Gender;
+import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @TestPropertySource(locations = "classpath:/application.yml")
@@ -32,6 +32,8 @@ class UsersRepositoryTest {
 
     @Autowired
     private AlbumRepository albumRepository;
+    @Autowired
+    private EntityManager entityManager;
 
     @Transactional
     @Test
@@ -113,22 +115,25 @@ class UsersRepositoryTest {
     @Test
     public void userRelationTest(){
         Users users = new Users();
+        UserHistory userHistory = new UserHistory();
 
         users.setId(1L);
         users.setName("조유리");
         users.setEmail("yrjo011022@gmail.com");
         users.setGender(Gender.FEMALE);
-        users.setUserHistories(new ArrayList<UserHistory>());
-
+        users.getUserHistories().add(userHistory);
         usersRepository.save(users);
 
-        users.setName("YRJo");
 
+        users.setName("YRJo");
         usersRepository.save(users);
 
         users.setEmail("yrjo@gmail.com");
-
         usersRepository.save(users);
+
+
+        userHistory.setUsers(users);
+        userHistoryRepository.save(userHistory);
 
         userHistoryRepository.findAll().forEach(System.out::println);
 
@@ -137,7 +142,7 @@ class UsersRepositoryTest {
 
         result.forEach(System.out::println);
 
-        System.out.println("test" + userHistoryRepository.findAll().get(0).getUsers());
+        System.out.println("res >> " + userHistoryRepository.findAll());
     }
 
     @Test

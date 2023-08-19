@@ -4,14 +4,14 @@ import com.example.myjpa.domain.UserHistory;
 import com.example.myjpa.domain.Users;
 import com.example.myjpa.repository.UserHistoryRepository;
 import com.example.myjpa.support.BeanUtils;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
+import jakarta.persistence.PostPersist;
+import jakarta.persistence.PostUpdate;
 
 //Entity Class는 Spring Bean을 주입 받지 못해서 support 클래스를 따로 만들어서 주입 시켜야 한다
 public class UserEntityListener {
 
-    @PrePersist
-    @PreUpdate
+    @PostPersist
+    @PostUpdate
     public void postPersistAndPostUpdate(Object o){
 
         UserHistoryRepository userHistoryRepository = BeanUtils.getBean(UserHistoryRepository.class);
